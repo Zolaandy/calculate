@@ -1,0 +1,50 @@
+<div class="cadre flex-column align-center ml5 mr5 mt2 mb2">
+	<section
+		class="screen flex-row align-end mt5 mr5 ml5 pb2 pr5"
+		[ngClass]="{ noir: on }"
+	>
+		<p>{{ affichage }}</p>
+	</section>
+	<!-- /.m2 -->
+	<section class="start mb5 mt2">
+		<ul class="flex-column align-end">
+			<li class="key linked" (click)="on = !on">On / Off</li>
+			<!-- /.key -->
+		</ul>
+	</section>
+	<!-- /.start -->
+	<section class="flex-row">
+		<ul class="keys flex-row just-arnd align-center">
+			<li
+				(click)="write(i)"
+				class="key linked"
+				*ngFor="let touche of touches; let i = index"
+			>
+				{{ touche }}
+			</li>
+		</ul>
+		<ul class="operators flex-column just-center">
+			<li
+				(click)="operation(n)"
+				class="key linked"
+				*ngFor="let operator of operators; let n = index"
+			>
+				{{ operator }}
+			</li>
+		</ul>
+	</section>
+	<section class="resultat flex-row mb5">
+		<ul class="equal flex-row">
+			<li
+				(click)="result(e)"
+				class="key linked"
+				*ngFor="let egal of egals; let e = index"
+			>
+				{{ egal }}
+			</li>
+		</ul>
+	</section>
+	<!-- /.resultat -->
+	<!-- /.m2 -->
+</div>
+<!-- /.cadre -->
